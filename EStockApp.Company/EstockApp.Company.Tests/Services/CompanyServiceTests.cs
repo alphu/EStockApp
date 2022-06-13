@@ -19,10 +19,10 @@ namespace EStockMarket.Company.Services.Tests
             Mock<IConfigurationSection> section = new Mock<IConfigurationSection>();
             AppConfig appconfig = new AppConfig()
             {
-                DbConnectionString = "mongodb+srv://finunazar:pass123@tweetappcluster.lh6hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-                DataBaseName = "EStockMarket",
+                DbConnectionString = "mongodb://localhost:27017/",
+                DataBaseName = "EStock",
                 CompanyCollectionName = "Company",
-                StockCollectionName = "StockPrice"
+                StockCollectionName = "Stock"
             };
             Mock<IOptions<AppConfig>> settings = new Mock<IOptions<AppConfig>>();
             settings.Setup(x => x.Value).Returns(appconfig);
@@ -39,10 +39,10 @@ namespace EStockMarket.Company.Services.Tests
             Mock<IConfigurationSection> section = new Mock<IConfigurationSection>();
             AppConfig appconfig = new AppConfig()
             {
-                DbConnectionString = "mongodb+srv://finunazar:pass123@tweetappcluster.lh6hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-                DataBaseName = "EStockMarket",
+                DbConnectionString = "mongodb://localhost:27017/",
+                DataBaseName = "EStock",
                 CompanyCollectionName = "Company",
-                StockCollectionName = "StockPrice"
+                StockCollectionName = "Stock"
             };
             Mock<IOptions<AppConfig>> settings = new Mock<IOptions<AppConfig>>();
             settings.Setup(x => x.Value).Returns(appconfig);

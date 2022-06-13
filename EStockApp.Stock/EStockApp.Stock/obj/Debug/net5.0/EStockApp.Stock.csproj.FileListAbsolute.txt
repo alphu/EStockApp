@@ -50,9 +50,9 @@ D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\staticweb
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\staticwebassets\EStockApp.Stock.StaticWebAssets.xml
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\scopedcss\bundle\EStockApp.Stock.styles.css
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.RazorTargetAssemblyInfo.cache
-D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.csproj.CopyComplete
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.dll
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\ref\EStockApp.Stock.dll
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.pdb
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.genruntimeconfig.cache
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.csproj.AssemblyReference.cache
+D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.csproj.CopyComplete

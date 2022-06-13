@@ -26,22 +26,22 @@ namespace EStockMarket.Company
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy(
-                  "CorsPolicy",
-                  builder => builder.AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader());
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(
+            //      "CorsPolicy",
+            //      builder => builder.AllowAnyOrigin()
+            //      .AllowAnyMethod()
+            //      .AllowAnyHeader());
+            //});
             services.AddControllers();
             services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
-            services.AddApiVersioning(x =>
-            {
-                x.DefaultApiVersion = new ApiVersion(1, 0);
-                x.AssumeDefaultVersionWhenUnspecified = true;
-                x.ReportApiVersions = true;
-            });
+            //services.AddApiVersioning(x =>
+            //{
+            //    x.DefaultApiVersion = new ApiVersion(1, 0);
+            //    x.AssumeDefaultVersionWhenUnspecified = true;
+            //    x.ReportApiVersions = true;
+            //});
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddSwaggerGen();
@@ -50,15 +50,23 @@ namespace EStockMarket.Company
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors("CorsPolicy");
+           
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            //app.UseCors("CorsPolicy");
+
+            app.UseCors(x => x
+           .AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
+
             app.UseSwagger();
-            app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseSwaggerUI(c =>
             {

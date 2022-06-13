@@ -11,8 +11,9 @@ using EStockMarket.Company.Services;
 namespace EStockMarket.Company.Controllers
 {
     [ApiController]
-    [ApiVersion("1.0")]
-    [Route("api/v{v:apiVersion}/market/[controller]")]
+    //[ApiVersion("1.0")]
+    //[Route("api/v{v:apiVersion}/market/[controller]")]
+    [Route("api/market/[controller]")]
     public class CompanyController : ControllerBase
     {
         
