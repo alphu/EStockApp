@@ -1,0 +1,127 @@
+
+<app-navbar></app-navbar>
+<div class="bg-img">
+<br/>
+<br/>
+<br/>
+<div id="formContent" *ngIf="!flag">
+    <form (ngSubmit)="registerCompany()" #registrationForm1="ngForm">
+        <div class="card mx-auto" style="width: 500px;background-color: #e6ffff;">
+            <br/>
+            <div class="row" style="text-align: center">
+                <div class="col-md-2"></div>
+                <div class="col-md-8"><h3><b>Company Registration</b></h3></div>
+                <div class="col-md-2"></div>
+            </div>   
+            <br/>  
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="code"><b>Code</b></label>
+                        <br />
+                        <input type="number" class="form-control" id="code" placeholder="Code"  name="c_code" [(ngModel)]="company.code" #code="ngModel"required>
+                        <div *ngIf="code?.dirty && code?.touched && code?.invalid">
+                        <div class="text-error text-danger" *ngIf="code?.errors?.['required']" ><strong>Code Required</strong></div>
+                        <!-- <div class="text-error text-danger" *ngIf="firstName?.errors?.pattern" ><strong>First Name Should Contain Only Letters</strong></div>    -->
+                        </div> 
+            
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="name"><b>Name</b></label>
+                        <br />
+                        <input type="text" class="form-control" id="name" placeholder="Name"  name="c_name" [(ngModel)]="company.name" #name="ngModel" required>
+                        <div *ngIf="name?.dirty && name?.touched && name?.invalid">
+                            <div class="text-error text-danger" *ngIf="name?.errors?.['required']" ><strong>Name Required</strong></div>
+                            <!-- <div class="text-error text-danger" *ngIf="firstName?.errors?.pattern" ><strong>First Name Should Contain Only Letters</strong></div>    -->
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="code"><b>CEO</b></label>
+                        <br />
+                        <input type="text" class="form-control" id="ceo" placeholder="CEO"  name="c_ceo" [(ngModel)]="company.ceo" #ceo="ngModel"required>
+                        <div *ngIf="ceo?.dirty && ceo?.touched && ceo?.invalid">
+                        <div class="text-error text-danger" *ngIf="ceo?.errors?.['required']" ><strong>CEO Required</strong></div>
+                        <!-- <div class="text-error text-danger" *ngIf="firstName?.errors?.pattern" ><strong>First Name Should Contain Only Letters</strong></div>    -->
+                        </div> 
+            
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="name"><b>TurnOver</b></label>
+                        <br />
+                        <input type="number" class="form-control" id="turnover" placeholder="Name"  name="c_turnover" [(ngModel)]="company.turnover" #turnover="ngModel" required>
+                        <div *ngIf="turnover?.dirty && turnover?.touched && turnover?.invalid">
+                            <div class="text-error text-danger" *ngIf="name?.errors?.['required']" ><strong>TurnOver Required</strong></div>
+                            <!-- <div class="text-error text-danger" *ngIf="firstName?.errors?.pattern" ><strong>First Name Should Contain Only Letters</strong></div>    -->
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="code"><b>Website</b></label>
+                        <br />
+                        <input type="text" class="form-control" id="website" placeholder="Website"  name="c_website" [(ngModel)]="company.website" #website="ngModel"required>
+                        <div *ngIf="website?.dirty && website?.touched && website?.invalid">
+                        <div class="text-error text-danger" *ngIf="website?.errors?.['required']" ><strong>Website Required</strong></div>
+                        <!-- <div class="text-error text-danger" *ngIf="firstName?.errors?.pattern" ><strong>First Name Should Contain Only Letters</strong></div>    -->
+                        </div> 
+            
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label for="name"><b>Stock Exchange</b></label>
+                        <br />
+                        <input type="text" class="form-control" id="stockexch" placeholder="Stock Exchange"  name="c_stockexch" [(ngModel)]="company.stockExchange" #stockexch="ngModel" required>
+                        <div *ngIf="stockexch?.dirty && stockexch?.touched && stockexch?.invalid">
+                            <div class="text-error text-danger" *ngIf="stockexch?.errors?.['required']" ><strong>Stock Exchange Required</strong></div>
+                            <!-- <div class="text-error text-danger" *ngIf="firstName?.errors?.pattern" ><strong>First Name Should Contain Only Letters</strong></div>    -->
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 mx-auto" style="text-align: center">
+                    <button type="submit"  class="btn btn-grad btn-lg mt-2 mx-auto" style="width:40%;" [disabled]="!registrationForm1.valid">Save</button>
+                </div>
+                <div class="col-md-2"></div>
+            </div> 
+            <br/>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 mx-auto text-error text-danger" style="text-align: center">
+                     <strong *ngIf="flagError">{{msgError}}</strong> 
+                </div>
+                <div class="col-md-2"></div>
+            </div> 
+            <br/>
+            <br/>
+        </div>
+    </form> 
+    </div>
+    <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 alert alert-success" *ngIf="flag">        
+        <strong>Company Registered !.</strong>&nbsp;&nbsp; <a routerLink="/ViewCompany/{{company.code}}/">View Company</a>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+</div>

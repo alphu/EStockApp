@@ -9,5 +9,6 @@ namespace EStockMarket.Stock.Services
     {
         public Task<CompanyDto> GetStockDetailsByDateRangeAsync(int code, DateTime startDate, DateTime endDate);
         public Task<bool> AddStockDetails(StockModel stock, int code);
+        public Task<StockModel> GetStockPriceByCompanyCode(int companyCode);
     }
 }

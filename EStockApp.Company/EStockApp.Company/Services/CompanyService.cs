@@ -49,6 +49,20 @@ namespace EStockMarket.Company.Services
                 throw ex;
             }
         }
+        public async Task<List<StockModel>> GetAllStockAsync()
+        {
+            try
+            {
+                var stockList = await _companyRepository.GetAllStockAsync();
+                
+                   
+                return stockList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public async Task<CompanyModel> AddCompany(CompanyModel companyDetails)
         {
             try
@@ -67,7 +81,24 @@ namespace EStockMarket.Company.Services
                 throw ex;
             }
         }
-
+        public async Task<CompanyModel> UpdateCompany(CompanyModel companyDetails, int code)
+        {
+            try
+            {
+                var result = await ValidateCompanyDetails(companyDetails);
+                if (result)
+                {
+                    var company = await _companyRepository.UpdateCompany(companyDetails,code);
+                    return company;
+                }
+                else
+                    throw new Exception("Unable To Add Company");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public async Task<bool> DeleteCompany(int code)
         {
             try

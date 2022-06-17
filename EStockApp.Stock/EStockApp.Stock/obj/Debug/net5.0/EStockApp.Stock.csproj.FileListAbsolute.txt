@@ -55,4 +55,3 @@ D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\ref\EStoc
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.pdb
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.genruntimeconfig.cache
 D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.csproj.AssemblyReference.cache
-D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock\obj\Debug\net5.0\EStockApp.Stock.csproj.CopyComplete

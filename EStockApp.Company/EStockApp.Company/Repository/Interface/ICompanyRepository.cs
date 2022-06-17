@@ -13,5 +13,11 @@ namespace EStockMarket.Company.Repository
         public Task<CompanyDto> GetCompanyByCodeAsync(int code);
         public Task<CompanyModel> AddCompany(CompanyModel company);
         public Task<bool> DeleteCompany(int code);
+
+        public Task<List<StockModel>> GetAllStockAsync();
+
+        public Task<CompanyModel> UpdateCompany(CompanyModel companyDetails, int code);
+
+       
     }
 }

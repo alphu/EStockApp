@@ -57,6 +57,22 @@ namespace EStockMarket.Stock.Services
                 throw ex;
             }
         }
+        public async Task<StockModel> GetStockPriceByCompanyCode(int companyCode)
+        {
+            try
+            {
+                if (companyCode ==0)
+                    throw new Exception("Please Enter Valid Code");
+                var stock = await _stockRepository.GetStockPriceByCompanyCode(companyCode);
+                if (stock == null)
+                    throw new StockNotFound("No Stock With The Given Code Found.");
+                return stock;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         private bool ValidateStockDetails(StockModel stock)
         {

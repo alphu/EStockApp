@@ -93,6 +93,30 @@ namespace EStockMarket.Company.Repository
                 throw ex;
             }
         }
+        public async Task<CompanyModel> UpdateCompany(CompanyModel CompanyDto,int code)
+        {
+            if (CompanyDto != null)
+            {
+                var company = _company.Find(c => c.Code == CompanyDto.Code).FirstOrDefaultAsync();
+                if (company != null)
+                {
+                    _company.ReplaceOne(s => s.Code == code, CompanyDto);
+                    
+                }
+            } 
+            else
+            {
+
+                return null;
+            }
+            return CompanyDto;
+        }
+        public async Task<List<StockModel>> GetAllStockAsync()
+        {
+            var stockList = await _stock.Find(c => true).ToListAsync();
+ 
+            return stockList;
+        }
 
         public async Task<bool> DeleteCompany(int code)
         {

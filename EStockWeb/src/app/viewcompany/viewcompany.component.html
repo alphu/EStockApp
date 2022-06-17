@@ -1,0 +1,168 @@
+<app-navbar></app-navbar>
+<div class="bg-img">
+<br/>
+<br/>
+<br/>
+<div *ngIf="!flagInvalid">
+
+    <div class="row" >
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-2 bg-info" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>Company Code</b></label>
+        </div>
+        <div class="col-lg-2" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>{{company.code}}</b></label>
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-2 bg-info" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>Company Name</b></label>
+        </div>
+        <div class="col-lg-2" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>{{company.name}}</b></label>
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <!-- <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-2" style="float: left;border:1px solid black;">
+            <label for="name"><b>From</b></label>
+        </div>
+        <div class="col-lg-2" style="float: left;border:1px solid black;">
+            <label for="name"><b>StartDate</b></label>
+        </div>
+        <div class="col-lg-2" style="float: left;border:1px solid black;">
+            <label for="name"><b>To</b></label>
+        </div>
+        <div class="col-lg-2" style="float: left;border:1px solid black;">
+            <label for="name"><b>EndDate</b></label>
+        </div>
+        <div class="col-lg-2">
+        </div>
+    </div> -->
+    <form (ngSubmit)="searchStock()" #searchForm1="ngForm"> 
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-1 bg-warning" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>From</b></label>
+        </div>
+        <div class="col-lg-2 bg-warning" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>Start Date : <input type="date" id="startdate" name="startdate" [(ngModel)]="startdate" ></b></label>
+        </div>
+        <div class="col-lg-1 bg-warning" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>To</b></label>
+        </div>
+        <div class="col-lg-2 bg-warning" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>End Date : <input type="date" id="enddate" name="enddate" [(ngModel)]="enddate" ></b></label>
+            <button type="submit" [disabled]="!searchForm1.valid"><i class="fa fa-search" style="font-size: 22px;"></i></button>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    </form>
+    <br/>
+    <br/>
+    
+    <div class="row" *ngIf="flagStock">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-2 bg-success" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>Stock Price</b></label>
+        </div>
+        <div class="col-lg-2 bg-success" style="text-align: center;;border:1px solid black;">
+            <label for="name"><b>Date</b></label>
+        </div>
+        <div class="col-lg-2 bg-success" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>Time</b></label>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <br/>
+    <div class="row" *ngFor="let s of stock">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-2" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>{{s.price}}</b></label>
+        </div>
+        <div class="col-lg-2" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>{{s.createdOnUtc |date:'mediumDate'}}</b></label>
+        </div>
+        <div class="col-lg-2" style="text-align: center;border:1px solid black;">
+            <label for="name"><b>{{s.createdOnUtc | date:'mediumTime'}}</b></label>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4 alert" *ngIf="flag">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            No stock found in this date range !.
+          </div>        
+        <div class="col-lg-4">
+        </div>
+    </div>
+    <br/>
+    <div class="row"  *ngIf="flagStock">
+        <div class="col-lg-5">
+        </div>
+        <div class="col-lg-1 bg-info" *ngIf="flagStock" style="text-align: center;border:1px solid black;">
+            <span><b>Min  </b></span>
+          </div>        
+        <div class="col-lg-1" style="text-align: center;border:1px solid black;">
+            <span><b>{{min}}  </b></span>
+        </div>
+        <div class="col-lg-5">
+        </div>
+    </div>
+    <div class="row"  *ngIf="flagStock">
+        <div class="col-lg-5">
+        </div>
+        <div class="col-lg-1 bg-info" *ngIf="flagStock" style="text-align: center;border:1px solid black;">
+            <span><b>Max  </b></span>
+          </div>        
+        <div class="col-lg-1" style="text-align: center;border:1px solid black;">
+            <span><b>{{max}}  </b></span>
+        </div>
+        <div class="col-lg-5">
+        </div>
+    </div>
+    <div class="row"  *ngIf="flagStock">
+        <div class="col-lg-5">
+        </div>
+        <div class="col-lg-1 bg-info" *ngIf="flagStock" style="text-align: center;border:1px solid black;">
+            <span><b>Avg  </b></span>
+          </div>        
+        <div class="col-lg-1" style="text-align: center;border:1px solid black;" >
+            <span><b>{{avg}}  </b></span>
+        </div>
+        <div class="col-lg-5">
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="flagInvalid">
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4 alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Invalid Company Code.
+      </div>        
+    <div class="col-lg-4">
+    </div>
+</div>
+</div>

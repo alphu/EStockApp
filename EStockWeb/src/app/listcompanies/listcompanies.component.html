@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="bg-img">
+    <br/>
+    <br/>
+    <br/>
+    <div class="alert alert-danger" *ngIf="flagError">        
+        <!-- <strong>{{msgError}}</strong> -->
+    </div>
+    <div class="container"><h2 class="text-center " style=" color:rgba(1, 37, 240, 0.986)"><strong>Companies</strong></h2>
+    </div><br/>
+    
+    <div class="container">
+        <div class="row ">
+            <table class="table table-striped">
+                <thead  pt-5>
+                    <tr>
+                        <th style="width: 15%">Code</th>
+                        <th style="width: 25%">Name</th>
+                        <th style="width: 20%">CEO</th>
+                        <th style="width: 10%">TurnOver</th>
+                        <th style="width: 10%">Stock Price</th>
+                        <th style="width: 10%"></th>
+                        <th style="width: 10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let company of companyList">
+                        <td>{{company.code }}</td>
+                        <td>{{company.name }}</td>
+                        <td>{{company.ceo}}</td>
+                        <td>{{company.turnover}}</td>
+                        <td>{{company.stockExchange}}</td>
+                        <td>
+                            <a routerLink="/ViewCompany/{{company.code}}" class="btn btn-grad mx-auto text-light">View Stock</a>
+                        </td>
+                        
+                    </tr>
+                    <tr *ngIf="!companyList">
+                        <td colspan="4" class="text-center">
+                            <span class="spinner-border spinner-border-lg align-center"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

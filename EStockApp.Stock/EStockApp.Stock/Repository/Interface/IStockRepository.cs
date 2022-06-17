@@ -7,8 +7,9 @@ namespace EStockMarket.Stock.Repository
 {
     public interface IStockRepository
     {
-        public Task<CompanyDto> GetStockDetailsByDateRangeAsync(int code, DateTime startDate, DateTime endDate);
-        public Task<bool> AddStockDetails(StockModel stock, int code);
+        public Task<CompanyDto> GetStockDetailsByDateRangeAsync(int companyCode, DateTime startDate, DateTime endDate);
+        public Task<bool> AddStockDetails(StockModel stock, int companyCode);
+        public Task<StockModel> GetStockPriceByCompanyCode(int companyCode);
 
     }
 }

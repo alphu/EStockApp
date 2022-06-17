@@ -11,9 +11,9 @@ using EStockMarket.Company.Services;
 namespace EStockMarket.Company.Controllers
 {
     [ApiController]
-    //[ApiVersion("1.0")]
-    //[Route("api/v{v:apiVersion}/market/[controller]")]
-    [Route("api/market/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{v:apiVersion}/market/[controller]")]
+    //[Route("api/market/[controller]")]
     public class CompanyController : ControllerBase
     {
         
@@ -50,6 +50,23 @@ namespace EStockMarket.Company.Controllers
                 return new BadRequestObjectResult(ex.Message.ToString());
             }
         }
+        [Route("UpdateCompany/{code}")]
+        [HttpPut]
+        public async Task<IActionResult> UpdateCompany([FromBody] CompanyModel company, int code)
+        {
+            try
+            {
+                _logger.LogInformation($"Register New Company: {company}");
+
+                var response = await _companyService.UpdateCompany(company,code);
+                return new OkObjectResult(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation($"Exception : {ex}");
+                return new BadRequestObjectResult(ex.Message.ToString());
+            }
+        }
 
         [HttpGet]
         [Route("getall")]
@@ -66,7 +83,25 @@ namespace EStockMarket.Company.Controllers
                 return new BadRequestObjectResult(ex.Message.ToString());
             }
         }
+        [HttpGet]
+        [Route("getallStock")]
+        public async Task<IActionResult> GetAllStock()
+        {
+            try
+            {
+                var stock = await _companyService.GetAllStockAsync();
+                if (stock == null)
+                {
+                    return NotFound();
+                }
 
+                return Ok(stock);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }
+        }
         [HttpGet]
         [Route("info/{companyCode}")]
         public async Task<IActionResult> GetCompanyByCodeAsync(int companyCode)
@@ -97,5 +132,6 @@ namespace EStockMarket.Company.Controllers
                 return new BadRequestObjectResult(ex.Message.ToString());
             }
         }
+      
     }
 }

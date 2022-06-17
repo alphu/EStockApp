@@ -63,5 +63,20 @@ namespace EStockMarket.Stock.Controllers
                 return new BadRequestObjectResult(ex.Message.ToString());
             }
         }
+        [HttpGet]
+        [Route("getStockPrice/{companyCode}")]
+        public async Task<IActionResult> GetStockPriceByCompanyCode(int companyCode)
+        {
+            try
+            {
+                var response = await _stockService.GetStockPriceByCompanyCode(companyCode);
+                return new OkObjectResult(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation($"Exception : {ex}");
+                return new BadRequestObjectResult(ex.Message.ToString());
+            }
+        }
     }
 }

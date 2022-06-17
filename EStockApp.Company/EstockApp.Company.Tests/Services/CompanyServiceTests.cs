@@ -5,14 +5,15 @@ using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using Xunit;
 
 namespace EStockMarket.Company.Services.Tests
 {
-    [TestClass]
+  
     public class CompanyServiceTests
     {
          
-        [TestMethod]
+        [Fact]
         public void GetCompanyByCodeAsyncTest()
         {
             Mock<IConfiguration> config = new Mock<IConfiguration>();
@@ -32,7 +33,7 @@ namespace EStockMarket.Company.Services.Tests
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void GetCompanyByCodeAsyncTest_Failure()
         {
             Mock<IConfiguration> config = new Mock<IConfiguration>();

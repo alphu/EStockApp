@@ -3,6 +3,7 @@ using EStockMarket.Stock.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EStockMarket.Stock.Repository
@@ -21,11 +22,11 @@ namespace EStockMarket.Stock.Repository
             _stock = database.GetCollection<StockModel>(_settings.StockCollectionName);
         }
 
-        public async Task<bool> AddStockDetails(StockModel stock, int code)
+        public async Task<bool> AddStockDetails(StockModel stock, int companyCode)
         {
             try
             {
-                var company = await _company.Find(c => c.Code == code).FirstOrDefaultAsync();
+                var company = await _company.Find(c => c.Code == companyCode).FirstOrDefaultAsync();
                 if (company != null)
                 {
                     await _stock.InsertOneAsync(stock);
@@ -66,6 +67,32 @@ namespace EStockMarket.Stock.Repository
                 throw ex;
             }
         }
+        public async Task<StockModel> GetStockPriceByCompanyCode(int companyCode)
+        {
+            try
+            {
+                var stockList = await _stock.Find(c => c.CompanyCode == companyCode).ToListAsync();
+                var latestStock = stockList.OrderByDescending(x => x.CreatedOnUtc).FirstOrDefault();
+                if (latestStock != null)
+                {
+                    var result = new StockModel()
+                    {
+                        CompanyCode = latestStock.CompanyCode,
+                        Price = latestStock.Price,
+
+                    };
+                    return result;
+                }
+                return null;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+}
+
 
     }
 }

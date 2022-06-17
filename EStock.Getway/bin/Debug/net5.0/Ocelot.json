@@ -25,7 +25,7 @@
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
     },
     {
-      "DownstreamPathTemplate": "/api/market/Company/getAll",
+      "DownstreamPathTemplate": "/api/v{v}/market/Company/getAll",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -33,7 +33,7 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/api/market/Company/getAll",
+      "UpstreamPathTemplate": "/api/v{v}/market/Company/getAll",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
@@ -61,6 +61,18 @@
       "UpstreamHttpMethod": [ "Delete" ]
     },
     {
+      "DownstreamPathTemplate": "/api/v{v}/market/Company/getallStock",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Company/getallStock",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/v{v}/market/Stock/add/{companyCode}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -82,6 +94,18 @@
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Stock/get/{companyCode}/{startDate}/{endDate}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Stock/getStockPrice/{companyCode}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Stock/getStockPrice/{companyCode}",
       "UpstreamHttpMethod": [ "GET" ]
     }
   ]

@@ -36,12 +36,12 @@ namespace EStockMarket.Company
             //});
             services.AddControllers();
             services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
-            //services.AddApiVersioning(x =>
-            //{
-            //    x.DefaultApiVersion = new ApiVersion(1, 0);
-            //    x.AssumeDefaultVersionWhenUnspecified = true;
-            //    x.ReportApiVersions = true;
-            //});
+            services.AddApiVersioning(x =>
+            {
+                x.DefaultApiVersion = new ApiVersion(1, 0);
+                x.AssumeDefaultVersionWhenUnspecified = true;
+                x.ReportApiVersions = true;
+            });
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddSwaggerGen();
