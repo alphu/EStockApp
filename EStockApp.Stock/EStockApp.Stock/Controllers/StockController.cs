@@ -1,4 +1,5 @@
-﻿using EStockMarket.Stock.Models;
+﻿using EStockApp.Stock.MessageBroker;
+using EStockMarket.Stock.Models;
 using EStockMarket.Stock.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,10 +16,12 @@ namespace EStockMarket.Stock.Controllers
 
         private readonly ILogger<StockController> _logger;
         private IStockService _stockService = null;
-        public StockController(ILogger<StockController> logger, IStockService stockService)
+        private IRabbitMqListener _rabbitMqListener;
+        public StockController(ILogger<StockController> logger, IStockService stockService, IRabbitMqListener rabbitMqListener)
         {
             _logger = logger;
             _stockService = stockService;
+            _rabbitMqListener = rabbitMqListener;
         }
 
         [HttpGet]
@@ -55,6 +58,7 @@ namespace EStockMarket.Stock.Controllers
                 _logger.LogInformation("Get Stock Deatils: ", companyCode);
                 var response = await _stockService.GetStockDetailsByDateRangeAsync(companyCode, startDate, endDate);
                 _logger.LogInformation($"Stock Details {companyCode} : ", response);
+                _rabbitMqListener.Receive();
                 return new OkObjectResult(response);
             }
             catch (Exception ex)

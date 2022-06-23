@@ -52,3 +52,4 @@ D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\ref\E
 D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\EStockApp.Company.pdb
 D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\EStockApp.Company.genruntimeconfig.cache
 D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\EStockApp.Company.csproj.AssemblyReference.cache
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\RabbitMQ.Client.dll

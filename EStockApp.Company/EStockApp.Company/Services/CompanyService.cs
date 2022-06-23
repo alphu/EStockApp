@@ -1,4 +1,5 @@
-﻿using EStockMarket.Company.CustomExceptions;
+﻿using EStockApp.Company.MessageBroker;
+using EStockMarket.Company.CustomExceptions;
 using EStockMarket.Company.Dto;
 using EStockMarket.Company.Models;
 using EStockMarket.Company.Repository;
@@ -14,10 +15,12 @@ namespace EStockMarket.Company.Services
     {
         private ICompanyRepository _companyRepository;
         private IConfiguration _config;
-        public CompanyService(ICompanyRepository companyRepository, IConfiguration config)
+        private readonly IRabbitMqListener _rabbitMqListener;
+        public CompanyService(ICompanyRepository companyRepository, IConfiguration config, IRabbitMqListener rabbitMqListener)
         {
             _companyRepository = companyRepository;
             _config = config;
+            _rabbitMqListener = rabbitMqListener;
         }
         public async Task<CompanyDto> GetCompanyByCodeAsync(int code)
         {
@@ -71,6 +74,7 @@ namespace EStockMarket.Company.Services
                 if (result)
                 {
                     var company = await _companyRepository.AddCompany(companyDetails);
+                    _rabbitMqListener.Publish(string.Format("New company added {0}", companyDetails.Name));
                     return company;
                 }
                 else

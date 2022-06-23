@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7sELr5GngolNDzQGc8HBpc1M8AgPcHmAXjzFh/pOCzi40/b0R9vhP4jzuS6CA+Dc3X0ydVOenjq56j9SdORLZw==",
+  "dgSpecHash": "F0VwZkkE6ddBx/+KsQxPGT1owPNx5m+bQS0a7E/EHvXvEa7PqLKtIaOIdgRMMCxRl57+AS+Z65yCkD4tPXyeEw==",
   "success": true,
   "projectFilePath": "D:\\Alphonsa\\EStockApp\\EStockApp.Stock\\EStockApp.Stock\\EStockApp.Stock.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,7 @@
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\mongodb.driver\\2.15.1\\mongodb.driver.2.15.1.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\mongodb.driver.core\\2.15.1\\mongodb.driver.core.2.15.1.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\mongodb.libmongocrypt\\1.3.0\\mongodb.libmongocrypt.1.3.0.nupkg.sha512",
+    "C:\\Users\\cogdotnet234\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\serilog.aspnetcore\\2.0.0\\serilog.aspnetcore.2.0.0.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\serilog.enrichers.environment\\2.2.0\\serilog.enrichers.environment.2.2.0.nupkg.sha512",
@@ -60,6 +61,7 @@
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.io\\4.1.0\\system.io.4.1.0.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.io.filesystem\\4.0.1\\system.io.filesystem.4.0.1.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.io.filesystem.primitives\\4.0.1\\system.io.filesystem.primitives.4.0.1.nupkg.sha512",
+    "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.reflection\\4.1.0\\system.reflection.4.1.0.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.reflection.primitives\\4.0.1\\system.reflection.primitives.4.0.1.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.resources.resourcemanager\\4.0.1\\system.resources.resourcemanager.4.0.1.nupkg.sha512",
@@ -75,6 +77,7 @@
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.text.encodings.web\\4.4.0\\system.text.encodings.web.4.4.0.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.threading\\4.0.11\\system.threading.4.0.11.nupkg.sha512",
+    "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",
     "C:\\Users\\cogdotnet234\\.nuget\\packages\\system.threading.timer\\4.0.1\\system.threading.timer.4.0.1.nupkg.sha512"
   ],
