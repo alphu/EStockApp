@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  estockapp.stock:
+    container_name: EstockApi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=server=estockdb;database=estockdb;User Id=SA;Password=pass@word1;Pooling=false
+    depends_on:
+      - "estockdb"
+    ports:
+      - "8001:80"
+
+  #estockdb:
+  #  container_name: EstockDB
+  #  image: postgres:latest
+  #  restart: always
+  #  environment: 
+  #    - POSTGRES_USER=SA
+  #    - POSTGRES_PASSWORD=pass@word1
+  #  ports:
+  #    - '5432:5432'

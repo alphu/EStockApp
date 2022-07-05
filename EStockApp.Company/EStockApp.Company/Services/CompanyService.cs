@@ -15,12 +15,12 @@ namespace EStockMarket.Company.Services
     {
         private ICompanyRepository _companyRepository;
         private IConfiguration _config;
-        private readonly IRabbitMqListener _rabbitMqListener;
-        public CompanyService(ICompanyRepository companyRepository, IConfiguration config, IRabbitMqListener rabbitMqListener)
+        private readonly IServiceBusSender _serviceBusSender;
+        public CompanyService(ICompanyRepository companyRepository, IConfiguration config, IServiceBusSender serviceBusSender)
         {
             _companyRepository = companyRepository;
             _config = config;
-            _rabbitMqListener = rabbitMqListener;
+            _serviceBusSender = serviceBusSender;
         }
         public async Task<CompanyDto> GetCompanyByCodeAsync(int code)
         {
@@ -74,7 +74,7 @@ namespace EStockMarket.Company.Services
                 if (result)
                 {
                     var company = await _companyRepository.AddCompany(companyDetails);
-                    _rabbitMqListener.Publish(string.Format("New company added {0}", companyDetails.Name));
+                    _serviceBusSender.SendCompany(companyDetails);
                     return company;
                 }
                 else

@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  estockapp.company:
+    image: ${DOCKER_REGISTRY-}estockappcompany
+    build:
+      context: .
+      dockerfile: EStockApp.Company/Dockerfile
+
+  estockdb:
+    image: postgres:latest

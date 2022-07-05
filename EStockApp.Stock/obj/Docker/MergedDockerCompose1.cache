@@ -1,0 +1,46 @@
+services:
+  estockapp.stock:
+    build:
+      context: D:\Alphonsa\EStockApp\EStockApp.Stock
+      dockerfile: EStockApp.Stock/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: EStockApp.Stock
+      target: base
+    container_name: EstockApi
+    depends_on:
+      estockdb:
+        condition: service_started
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ConnectionStrings__DefaultConnection: server=estockdb;database=estockdb;User
+        Id=SA;Password=pass@word1;Pooling=false
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
+    image: estockappstock:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages --additionalProbingPath
+        /root/.nuget/fallbackpackages2  "/app/bin/Debug/net5.0/EStockApp.Stock.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 8001
+      target: 80
+    tty: true
+    volumes:
+    - D:\Alphonsa\EStockApp\EStockApp.Stock\EStockApp.Stock:/app:rw
+    - C:\Users\cogdotnet234\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\cogdotnet234\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\cogdotnet234\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
+    - C:\Program Files (x86)\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages2:ro
+    - C:\Users\cogdotnet234\.nuget\packages:/root/.nuget/packages:ro
+    - D:\Alphonsa\EStockApp\EStockApp.Stock:/src:rw
+  estockdb:
+    image: postgres:latest
+version: '3.4'

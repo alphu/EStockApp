@@ -90,7 +90,6 @@ D:\Alphonsa\EStockApp\EStock.Getway\bin\Debug\net5.0\System.IdentityModel.Tokens
 D:\Alphonsa\EStockApp\EStock.Getway\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
 D:\Alphonsa\EStockApp\EStock.Getway\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
 D:\Alphonsa\EStockApp\EStock.Getway\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Alphonsa\EStockApp\EStock.Getway\obj\Debug\net5.0\EStock.Getway.csproj.AssemblyReference.cache
 D:\Alphonsa\EStockApp\EStock.Getway\obj\Debug\net5.0\EStock.Getway.GeneratedMSBuildEditorConfig.editorconfig
 D:\Alphonsa\EStockApp\EStock.Getway\obj\Debug\net5.0\EStock.Getway.AssemblyInfoInputs.cache
 D:\Alphonsa\EStockApp\EStock.Getway\obj\Debug\net5.0\EStock.Getway.AssemblyInfo.cs

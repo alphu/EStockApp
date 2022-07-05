@@ -150,3 +150,10 @@ D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\obj\Debug\net5.0
 D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\obj\Debug\net5.0\ref\EstockApp.Company.Tests.dll
 D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\obj\Debug\net5.0\EstockApp.Company.Tests.pdb
 D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\obj\Debug\net5.0\EstockApp.Company.Tests.genruntimeconfig.cache
+D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\bin\Debug\net5.0\RabbitMQ.Client.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\bin\Debug\net5.0\Azure.Core.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\bin\Debug\net5.0\Azure.Core.Amqp.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\bin\Debug\net5.0\Azure.Messaging.ServiceBus.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\bin\Debug\net5.0\Microsoft.Azure.Amqp.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EstockApp.Company.Tests\bin\Debug\net5.0\System.Memory.Data.dll

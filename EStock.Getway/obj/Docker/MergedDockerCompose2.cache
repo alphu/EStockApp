@@ -1,0 +1,39 @@
+services:
+  estock.getway:
+    build:
+      context: D:\Alphonsa\EStockApp\EStock.Getway
+      dockerfile: Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: EStock.Getway
+      target: base
+    container_name: EStock.Getway
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
+    image: estockgetway:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages --additionalProbingPath
+        /root/.nuget/fallbackpackages2  ""'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - published: 8002
+      target: 80
+    tty: true
+    volumes:
+    - D:\Alphonsa\EStockApp\EStock.Getway:/app:rw
+    - C:\Users\cogdotnet234\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\cogdotnet234\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\cogdotnet234\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
+    - C:\Program Files (x86)\Microsoft\Xamarin\NuGet:/root/.nuget/fallbackpackages2:ro
+    - C:\Users\cogdotnet234\.nuget\packages:/root/.nuget/packages:ro
+    - D:\Alphonsa\EStockApp\EStock.Getway:/src:rw
+version: '3.4'

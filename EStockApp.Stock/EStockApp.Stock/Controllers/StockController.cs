@@ -16,12 +16,10 @@ namespace EStockMarket.Stock.Controllers
 
         private readonly ILogger<StockController> _logger;
         private IStockService _stockService = null;
-        private IRabbitMqListener _rabbitMqListener;
-        public StockController(ILogger<StockController> logger, IStockService stockService, IRabbitMqListener rabbitMqListener)
+        public StockController(ILogger<StockController> logger, IStockService stockService)
         {
             _logger = logger;
             _stockService = stockService;
-            _rabbitMqListener = rabbitMqListener;
         }
 
         [HttpGet]
@@ -58,7 +56,6 @@ namespace EStockMarket.Stock.Controllers
                 _logger.LogInformation("Get Stock Deatils: ", companyCode);
                 var response = await _stockService.GetStockDetailsByDateRangeAsync(companyCode, startDate, endDate);
                 _logger.LogInformation($"Stock Details {companyCode} : ", response);
-                _rabbitMqListener.Receive();
                 return new OkObjectResult(response);
             }
             catch (Exception ex)

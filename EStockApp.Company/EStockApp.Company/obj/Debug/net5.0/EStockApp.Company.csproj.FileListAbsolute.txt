@@ -51,5 +51,12 @@ D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\EStoc
 D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\ref\EStockApp.Company.dll
 D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\EStockApp.Company.pdb
 D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\EStockApp.Company.genruntimeconfig.cache
-D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\EStockApp.Company.csproj.AssemblyReference.cache
 D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\RabbitMQ.Client.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\Azure.Core.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\Azure.Core.Amqp.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\Azure.Messaging.ServiceBus.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\Microsoft.Azure.Amqp.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\bin\Debug\net5.0\System.Memory.Data.dll
+D:\Alphonsa\EStockApp\EStockApp.Company\EStockApp.Company\obj\Debug\net5.0\EStockApp.Company.csproj.CopyComplete

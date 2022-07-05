@@ -24,7 +24,7 @@ namespace EStockMarket.Company
         }
 
         public IConfiguration Configuration { get; }
-
+        private IConfigurationSection serviceClientSettingsConfig;
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -47,6 +47,9 @@ namespace EStockMarket.Company
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IRabbitMqListener, RabbitMqListener>();
+            serviceClientSettingsConfig = Configuration.GetSection("AzureServiceBus");
+            services.Configure<AzureServiceBusConfiguration>(serviceClientSettingsConfig);
+            services.AddScoped<IServiceBusSender, ServiceBusSender>();
             services.AddSingleton(services =>
             {
                 var _config = Configuration.GetSection("RabbitMQ");

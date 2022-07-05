@@ -1,0 +1,20 @@
+services:
+  estockapp.stock:
+    build:
+      context: D:\Alphonsa\EStockApp\EStockApp.Stock
+      dockerfile: EStockApp.Stock/Dockerfile
+    container_name: EstockApi
+    depends_on:
+      estockdb:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: server=estockdb;database=estockdb;User
+        Id=SA;Password=pass@word1;Pooling=false
+    image: estockappstock
+    ports:
+    - published: 8001
+      target: 80
+  estockdb:
+    image: postgres:latest
+version: '3.4'

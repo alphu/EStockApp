@@ -1,4 +1,5 @@
-﻿using EStockMarket.Company.Dto;
+﻿using EStockApp.Company.MessageBroker;
+using EStockMarket.Company.Dto;
 using EStockMarket.Company.Repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
@@ -26,9 +27,10 @@ namespace EStockMarket.Company.Services.Tests
                 StockCollectionName = "Stock"
             };
             Mock<IOptions<AppConfig>> settings = new Mock<IOptions<AppConfig>>();
+            Mock<IServiceBusSender> rbt = new Mock<IServiceBusSender>();
             settings.Setup(x => x.Value).Returns(appconfig);
             Mock<CompanyRepository> chk = new Mock<CompanyRepository>(settings.Object);
-            CompanyService service = new CompanyService(chk.Object, config.Object);
+            CompanyService service = new CompanyService(chk.Object, config.Object, rbt.Object);
             var result = service.GetCompanyByCodeAsync(1);
             Assert.IsNotNull(result);
         }
@@ -47,8 +49,9 @@ namespace EStockMarket.Company.Services.Tests
             };
             Mock<IOptions<AppConfig>> settings = new Mock<IOptions<AppConfig>>();
             settings.Setup(x => x.Value).Returns(appconfig);
+            Mock<IServiceBusSender> rbt = new Mock<IServiceBusSender>();
             Mock<CompanyRepository> chk = new Mock<CompanyRepository>(settings.Object);
-            CompanyService service = new CompanyService(chk.Object, config.Object);
+            CompanyService service = new CompanyService(chk.Object, config.Object, rbt.Object);
             chk.Setup(x => x.GetCompanyByCodeAsync(It.IsAny<int>())).ThrowsAsync(new Exception());
             //var result = service.GetCompanyByCodeAsync(0);
             Assert.ThrowsException<Exception>(() => service.GetCompanyByCodeAsync(0));

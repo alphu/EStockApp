@@ -2,11 +2,11 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Company/register",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Company/register",
@@ -14,11 +14,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Company/{companyCode}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Company/{companyCode}",
@@ -26,11 +26,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Company/getAll",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 8000
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Company/getAll",
@@ -38,11 +38,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Company/info/{companyCode}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Company/info/{companyCode}",
@@ -50,11 +50,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Company/delete/{companyCode}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Company/delete/{companyCode}",
@@ -62,11 +62,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Company/getallStock",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5001
+          "Host": "estockappstock.azurewebsites.net"
+          //"Port": 5001
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Company/getallStock",
@@ -74,11 +74,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Stock/add/{companyCode}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5000
+          "Host": "estockappstock.azurewebsites.net"
+          //"Port": 5000
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Stock/add/{companyCode}",
@@ -86,11 +86,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Stock/get/{companyCode}/{startDate}/{endDate}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5000
+          "Host": "estockappstock.azurewebsites.net"
+          //"Port": 5000
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Stock/get/{companyCode}/{startDate}/{endDate}",
@@ -98,11 +98,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/v{v}/market/Stock/getStockPrice/{companyCode}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5000
+          "Host": "estockappstock.azurewebsites.net"
+          //"Port": 5000
         }
       ],
       "UpstreamPathTemplate": "/api/v{v}/market/Stock/getStockPrice/{companyCode}",
