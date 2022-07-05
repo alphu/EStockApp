@@ -9,7 +9,7 @@ import { ICompany } from '../Models/ICompany.Module';
 })
 export class StockService {
 
-  readonly rootUrl = 'http://localhost:5002/api/v1/market/Stock';
+  readonly rootUrl = 'https://estockgetway.azurewebsites.net/api/v1/market/Stock';
   constructor(private http: HttpClient,private router: Router) { }
   addStock(stockData:IStockPrice)
   {

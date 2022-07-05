@@ -1,0 +1,112 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Company/register",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Company/register",
+      "UpstreamHttpMethod": [ "POST", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Company/{companyCode}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Company/{companyCode}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Company/getAll",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 8000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Company/getAll",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Company/info/{companyCode}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Company/info/{companyCode}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Company/delete/{companyCode}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappcompany.azurewebsites.net"
+          //"Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Company/delete/{companyCode}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Company/getallStock",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappstock.azurewebsites.net"
+          //"Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Company/getallStock",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Stock/add/{companyCode}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappstock.azurewebsites.net"
+          //"Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Stock/add/{companyCode}",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Stock/get/{companyCode}/{startDate}/{endDate}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappstock.azurewebsites.net"
+          //"Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Stock/get/{companyCode}/{startDate}/{endDate}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v{v}/market/Stock/getStockPrice/{companyCode}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "estockappstock.azurewebsites.net"
+          //"Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v{v}/market/Stock/getStockPrice/{companyCode}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ]
+}  

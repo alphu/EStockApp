@@ -8,7 +8,7 @@ import { ICompany } from '../Models/ICompany.Module';
 })
 export class CompanyService {
 
-  readonly rootUrl = 'http://localhost:5002/api/v1/market/Company';
+  readonly rootUrl = 'https://estockgetway.azurewebsites.net/api/v1/market/Company';
   constructor(private http: HttpClient,private router: Router) { }
 
   addCompany(companyData:ICompany)
